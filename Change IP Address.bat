@@ -1,7 +1,7 @@
 @ echo off
 REM Specify the LAN interface you want to change with the net variable, defaults to "Local Area Connection"
 SET net="Local Area Connection"
-netsh interface ip show config
+netsh interface ip show show address %net%
 SET /p dhcp=Use DHCP? Enter y to set to DHCP:
 IF %dhcp%==y (goto :setDHCP) ELSE (goto :setStatic)
 goto eof
